@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: aim_clone_be_development
+
+test:
+  <<: *default
+  database: aim_clone_be_test
+
+production:
+  <<: *default
+  database: aim_clone_be_production
+  username: aim_clone_be
+  password: <%= ENV['AIM-CLONE-BE_DATABASE_PASSWORD'] %>
